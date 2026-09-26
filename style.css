@@ -239,3 +239,33 @@ section[id]{scroll-margin-top:96px}
   .signature-placeholder{display:block}
   .signature-placeholder small{display:block;margin-top:5px}
 }
+
+/* V1.8.1 — Official membership fee display and auto-calculation */
+.fee-banner-v181{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 28px}
+.fee-banner-v181>div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:15px 18px}
+.fee-banner-v181 strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+.fee-banner-v181 span{display:block;font-size:23px;font-weight:800;margin-top:5px}
+.fee-summary-v181{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:10px;margin:15px 0}
+.fee-summary-v181>div{background:#fff;border:1px solid #dfe9e4;border-radius:10px;padding:11px 12px}
+.fee-summary-v181 span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.fee-summary-v181 strong{display:block;margin-top:4px;font-size:17px;color:var(--green2)}
+.fee-summary-v181 .total{background:#edf6f1;border-color:#cfe2d8}
+.fee-summary-v181 .total strong{font-size:20px}
+.fee-note-v181{font-size:11px!important;color:var(--muted)!important;margin:5px 0 15px!important}
+.fee-table-v181{display:grid;gap:8px;margin:12px 0 15px}
+.fee-table-v181>div{display:flex;justify-content:space-between;gap:15px;background:#f3f7f5;border:1px solid #dfe9e4;padding:11px 12px;border-radius:9px;font-size:13px}
+.fee-table-v181 strong{color:var(--green2)}
+@media(max-width:650px){
+ .fee-banner-v181{grid-template-columns:1fr}
+ .fee-summary-v181{grid-template-columns:1fr}
+}
+
+/* V1.8.2 — Membership photo upload */
+.photo-upload-box{width:120px;flex:0 0 auto;text-align:center}
+.photo-box-clickable{position:relative;overflow:hidden;cursor:pointer;width:82px;height:105px;margin:0 auto}
+.photo-box-clickable:hover{border-color:var(--red);background:#f7faf8}
+.photo-box-clickable small{font-size:9px;color:#83958e}
+.photo-box-clickable input{display:none}
+.photo-upload-box>input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#photoPreview{display:none;width:100%;height:100%;object-fit:cover;border-radius:7px}
+.photo-help{display:block;margin-top:6px;color:var(--muted);font-size:9px;line-height:1.35}

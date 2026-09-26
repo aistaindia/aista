@@ -37,3 +37,11 @@ Upload/replace the files in the repository root and keep the `assets` folder int
 
 ## V1.8 — Membership Enrolment
 The membership section has been digitised from the paper Membership Enrolment Form supplied by the Association. It includes Annual, Life, Personal and Institutional membership options and the form fields visible on the supplied document. No fee is assumed. The supplied form image is retained under `assets/membership-enrolment-form-reference.jpg`.
+
+
+## V1.8.1 — Official Membership Fees
+Membership fees and eligibility were updated from the rules supplied by the Association. The form now auto-populates the membership fee and calculates total payable including the ₹100 admission fee.
+
+
+## V1.8.2 — Member Photo Upload
+The membership form now includes a local photo upload control. Applicants can select a photo from a laptop/desktop file picker or from a mobile phone gallery. The browser shows a preview before submission and accepts image files up to 5 MB. Actual storage of the uploaded image in Google Drive will be connected in the Google Apps Script backend phase.

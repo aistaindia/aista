@@ -17,3 +17,68 @@ document.querySelector('#membershipForm')?.addEventListener('submit',e=>{
     slides[current].classList.add('active');
   },5000);
 })();
+
+
+// V1.8.1 — Membership fee auto-population
+const membershipType = document.querySelector('#membershipType');
+const membershipFee = document.querySelector('#membershipFee');
+const summaryMembershipFee = document.querySelector('#summaryMembershipFee');
+const totalFee = document.querySelector('#totalFee');
+const admissionFee = 100;
+const membershipFees = {
+  "Ordinary Annual": 500,
+  "Life": 2500
+};
+
+function updateMembershipFee() {
+  const type = membershipType?.value || "";
+  const fee = membershipFees[type];
+  if (!membershipFee) return;
+  if (fee) {
+    membershipFee.value = `₹${fee.toLocaleString('en-IN')}`;
+    if (summaryMembershipFee) summaryMembershipFee.textContent = `₹${fee.toLocaleString('en-IN')}`;
+    if (totalFee) totalFee.textContent = `₹${(admissionFee + fee).toLocaleString('en-IN')}`;
+  } else {
+    membershipFee.value = "";
+    if (summaryMembershipFee) summaryMembershipFee.textContent = "—";
+    if (totalFee) totalFee.textContent = "Select membership type";
+  }
+}
+membershipType?.addEventListener('change', updateMembershipFee);
+updateMembershipFee();
+
+
+
+/* V1.8.2 — Membership photo upload and preview */
+document.querySelector('#memberPhoto')?.addEventListener('change', function () {
+  const file = this.files && this.files[0];
+  const preview = document.querySelector('#photoPreview');
+  const text = document.querySelector('#photoPreviewText');
+  const help = document.querySelector('.photo-help');
+
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    this.value = '';
+    if (help) help.textContent = 'Please select an image file (JPG, JPEG or PNG).';
+    return;
+  }
+
+  // Keep the browser-side upload lightweight.
+  if (file.size > 5 * 1024 * 1024) {
+    this.value = '';
+    if (help) help.textContent = 'Photo is larger than 5 MB. Please choose a smaller image.';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    if (preview) {
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    }
+    if (text) text.style.display = 'none';
+    if (help) help.textContent = `${file.name} selected`;
+  };
+  reader.readAsDataURL(file);
+});

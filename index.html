@@ -239,12 +239,18 @@
   <div class="membership-heading">
     <div>
       <h2>Become a Member</h2>
-      <p class="lead">Membership enrolment based on the Association's current paper Membership Enrolment Form. The digital form below preserves the same core information and membership categories.</p>
+      <p class="lead">Join The Association of Science Teachers through the prescribed membership process. The fees below are based on the membership rules supplied to us.</p>
     </div>
     <div class="membership-source">
-      <strong>Current categories</strong>
-      <span>Annual • Life • Personal • Institutional</span>
+      <strong>Eligibility</strong>
+      <span>Indian citizen • 18 years or above • agrees to the Society's rules</span>
     </div>
+  </div>
+
+  <div class="fee-banner-v181">
+    <div><strong>Admission Fee</strong><span>₹100</span></div>
+    <div><strong>Ordinary Annual Membership</strong><span>₹500</span></div>
+    <div><strong>Life Membership</strong><span>₹2,500</span></div>
   </div>
 
   <div class="membership-grid-v18">
@@ -256,25 +262,36 @@
             <h3>Membership Enrolment Form</h3>
             <p>In Continuation of AISTA</p>
           </div>
-          <div class="photo-box">PHOTO</div>
+          <div class="photo-upload-box">
+  <label for="memberPhoto" class="photo-box photo-box-clickable">
+    <span id="photoPreviewText">PHOTO<br><small>Click to upload</small></span>
+    <img id="photoPreview" alt="Selected membership photo preview">
+  </label>
+  <input id="memberPhoto" name="member_photo" type="file" accept="image/*">
+  <small class="photo-help">Upload from laptop/mobile gallery. JPG, JPEG or PNG recommended.</small>
+</div>
         </div>
 
         <div class="form-intro-box">
-          <p>I wish to be enrolled as a/an <strong>Annual / Life / Personal / Institutional</strong> member.</p>
+          <p>I wish to be enrolled as an <strong>Ordinary Annual / Life</strong> member.</p>
           <div class="field-grid two">
-            <label>Membership Type
-              <select required name="membership_type">
+            <label>Membership Type <span class="required">*</span>
+              <select required name="membership_type" id="membershipType">
                 <option value="">Select membership type</option>
-                <option>Annual</option>
-                <option>Life</option>
-                <option>Personal</option>
-                <option>Institutional</option>
+                <option value="Ordinary Annual">Ordinary Annual — ₹500</option>
+                <option value="Life">Life — ₹2,500</option>
               </select>
             </label>
-            <label>Amount (Rs.)
-              <input name="amount" inputmode="decimal" placeholder="To be entered">
+            <label>Membership Fee
+              <input id="membershipFee" name="membership_fee" value="" readonly placeholder="Auto-populated">
             </label>
           </div>
+          <div class="fee-summary-v181">
+            <div><span>Admission Fee</span><strong id="admissionFee">₹100</strong></div>
+            <div><span>Membership Fee</span><strong id="summaryMembershipFee">—</strong></div>
+            <div class="total"><span>Total Payable</span><strong id="totalFee">Select membership type</strong></div>
+          </div>
+          <p class="fee-note-v181">The admission fee is ₹100. The selected membership fee is added automatically. Payment details can be finalized by the Association for the online workflow.</p>
           <label>Payment Mode
             <select name="payment_mode">
               <option value="">Select payment mode</option>
@@ -321,32 +338,27 @@
 
     <aside class="membership-side-v18">
       <div class="membership-card-v18">
-        <span class="section-tag">WHAT THE CURRENT FORM SHOWS</span>
-        <h3>Membership categories</h3>
-        <div class="category-list">
-          <span>Annual</span><span>Life</span><span>Personal</span><span>Institutional</span>
+        <span class="section-tag">MEMBERSHIP FEES</span>
+        <h3>Current fee structure</h3>
+        <div class="fee-table-v181">
+          <div><span>Admission Fee</span><strong>₹100</strong></div>
+          <div><span>Ordinary Annual</span><strong>₹500</strong></div>
+          <div><span>Life Membership</span><strong>₹2,500</strong></div>
         </div>
-        <p>These categories are transcribed from the supplied Membership Enrolment Form. Fees have intentionally not been added because they are not visible on the supplied form.</p>
+        <p><strong>Total at application:</strong> Ordinary Annual ₹600 (₹100 admission + ₹500 membership) or Life ₹2,600 (₹100 admission + ₹2,500 membership).</p>
       </div>
 
       <div class="membership-card-v18">
-        <span class="section-tag">INFORMATION REQUIRED</span>
-        <ul class="membership-checklist">
-          <li>Applicant's name and date of birth</li>
-          <li>Designation, post and qualification</li>
-          <li>Institution's name</li>
-          <li>Postal and permanent address</li>
-          <li>PIN code, telephone and mobile number</li>
-          <li>E-mail address</li>
-          <li>Place, date and signature</li>
-          <li>Photograph</li>
-        </ul>
+        <span class="section-tag">ELIGIBILITY &amp; PROCESS</span>
+        <h3>Who can apply?</h3>
+        <p>An Indian citizen aged 18 years or above who is interested in the work of the Society and agrees to its rules may apply for membership.</p>
+        <p>Applications are made through the prescribed membership form and are considered by the <strong>Managing Committee</strong>.</p>
       </div>
 
       <div class="membership-card-v18 source-card">
         <span class="section-tag">REFERENCE</span>
-        <h3>Current paper enrolment form</h3>
-        <p>The supplied paper form has been retained in the project as a reference image so future digital changes can be checked against the Association's original format.</p>
+        <h3>Current membership form</h3>
+        <p>The original paper enrolment form remains available as a reference. The website fields will be connected to the official digital workflow in a later version.</p>
         <img src="assets/membership-enrolment-form-reference.jpg" alt="Reference image of the supplied Membership Enrolment Form">
       </div>
     </aside>
