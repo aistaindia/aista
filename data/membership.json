@@ -1,0 +1,33 @@
+{
+  "source": "Membership Enrolment Form supplied by the Association",
+  "categories": [
+    "Annual",
+    "Life",
+    "Personal",
+    "Institutional"
+  ],
+  "fees": "Not displayed on the supplied form; to be updated when officially confirmed.",
+  "payment": [
+    "Cheque",
+    "Cash"
+  ],
+  "application_fields": [
+    "Name",
+    "Date of Birth",
+    "Designation & Post",
+    "Qualification",
+    "Institution's Name",
+    "Postal Address",
+    "Permanent Address",
+    "Pin Code",
+    "Telephone No.",
+    "Mobile No.",
+    "E-mail",
+    "Place",
+    "Date",
+    "Signature",
+    "Photo"
+  ],
+  "declaration": "I hereby declare to abide by the constitution of AISTA.",
+  "status": "Digital application form prepared from the supplied paper enrolment form. Online submission/database integration is planned for a later version."
+}
