@@ -188,259 +188,54 @@ section[id]{scroll-margin-top:96px}
 @media(max-width:520px){.states-rich{grid-template-columns:1fr}.network-copy,.office-card{padding:22px}.network-note .outline{width:100%;text-align:center}}
 
 
-/* V1.5 top-notices layout retired in V1.6. Notices now live inside the hero beside the headline. */
-
-/* Version 1.6.3 — Desktop hero notice panel aligned to the far right */
-.hero{
-  min-height:680px;
-}
-.hero-shell{
-  position:relative;
-  z-index:2;
-  width:96%;
-  max-width:none;
-  min-height:680px;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 420px;
-  align-items:center;
-  gap:52px;
-}
-.hero-content{
-  padding:78px 0;
-  min-width:0;
-}
-.hero-content p{
-  max-width:680px;
-}
-.hero-notices{
-  width:100%;
-  max-width:440px;
-  justify-self:end;
-  transform:none;
-  color:var(--ink);
-  background:rgba(255,255,255,.96);
-  border:1px solid rgba(255,255,255,.7);
-  border-radius:22px;
-  padding:25px;
-  box-shadow:0 22px 60px rgba(0,0,0,.22);
-  backdrop-filter:blur(12px);
-}
-.hero-notices-head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:14px;
-  margin-bottom:17px;
-}
-.hero-notices-head .section-tag{
-  display:block;
-  color:#9a7a12;
-  margin-bottom:4px;
-}
-.hero-notices h2{
-  font-size:29px;
-  line-height:1.1;
-  margin:0;
-  color:var(--green2);
-}
-.hero-notices-live{
-  flex:0 0 auto;
-  background:#eaf5ef;
-  color:var(--green);
-  border:1px solid #cfe4d9;
-  border-radius:999px;
-  padding:5px 9px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.1em;
-}
-.hero-notices .notice-ticker{
-  overflow:hidden;
-}
-.notice-ticker-window{
-  height:252px;
-  overflow:hidden;
-  position:relative;
-  border-top:1px solid #e6eee9;
-  border-bottom:1px solid #e6eee9;
-}
-.notice-ticker-track{
-  will-change:transform;
-}
-.hero-notices .notice-item{
-  min-height:82px;
-  height:82px;
-  display:grid;
-  grid-template-columns:auto 1fr;
-  align-items:start;
-  gap:12px;
-  padding:13px 4px;
-  color:var(--ink);
-  border-bottom:1px solid #edf2ef;
-  transition:background .2s ease;
-}
-.hero-notices .notice-item:hover,
-.hero-notices .notice-item:focus-visible{
-  background:#f6faf7;
-  outline:none;
-}
-.notice-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:72px;
-  padding:5px 7px;
-  border-radius:999px;
-  background:#f8efc9;
-  color:#7c6210;
-  font-size:9px;
-  line-height:1;
-  font-weight:800;
-  letter-spacing:.06em;
-}
-.hero-notices .notice-item b{
-  display:block;
-  font-size:13px;
-  line-height:1.3;
-  color:var(--green2);
-}
-.hero-notices .notice-item p{
-  margin:4px 0 0;
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.35;
-}
-.notice-ticker-controls{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-top:17px;
-}
-.ticker-pause{
-  border:0;
-  background:#edf4f0;
-  color:var(--green);
-  border-radius:8px;
-  padding:8px 12px;
-  font:600 11px "DM Sans",sans-serif;
-  cursor:pointer;
-}
-.ticker-pause:hover{
-  background:#e1ece7;
-}
-.notice-view-all{
-  color:var(--green);
-  font-size:12px;
-  font-weight:800;
-  text-align:right;
-}
-.notice-view-all:hover{
-  color:var(--red);
-}
-.hero-notices .notice-ticker-controls{
-  border-top:0;
-}
-
-/* Keep the standalone administrative banner below the hero */
-.notice-strip{
-  margin:28px auto 10px;
-}
-
-/* Improve reduced-motion accessibility */
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero-slide{transition:none}
-  .hero-slide.active{transform:none}
-}
-
-/* Tablet/mobile: stack the notices below the hero copy while retaining the same component */
-@media(max-width:1000px){
-  .hero{
-    min-height:auto;
-  }
-  .hero-shell{
-    grid-template-columns:1fr;
-    gap:10px;
-    padding:58px 0 65px;
-    min-height:auto;
-  }
-  .hero-content{
-    padding:0;
-  }
-  .hero-notices{
-    justify-self:stretch;
-    max-width:none;
-    margin-top:15px;
-    transform:none;
-  }
-}
-@media(max-width:520px){
-  .hero-shell{
-    width:min(94%,520px);
-    padding:45px 0 50px;
-  }
-  .hero h1{
-    font-size:42px;
-  }
-  .hero-notices{
-    padding:18px;
-    border-radius:17px;
-  }
-  .hero-notices h2{
-    font-size:24px;
-  }
-  .notice-ticker-window{
-    height:246px;
-  }
-  .hero-notices .notice-item{
-    grid-template-columns:1fr;
-    height:82px;
-    min-height:82px;
-    gap:5px;
-    padding:10px 2px;
-  }
-  .notice-badge{
-    justify-self:start;
-  }
-  .hero-notices .notice-item p{
-    display:none;
-  }
-  .notice-ticker-controls{
-    align-items:center;
-  }
-  .notice-view-all{
-    font-size:11px;
-  }
-}
-
-/* V1.7 — Data-driven notices and searchable conference archive */
-.notice-loading{height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;padding:20px;text-align:center}
-.notice-board-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
-.notice-board-card{background:#fff;border:1px solid #dfe9e4;border-radius:16px;padding:25px;box-shadow:0 8px 24px rgba(15,52,39,.06);transition:transform .2s ease,box-shadow .2s ease}
-.notice-board-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.notice-board-card.featured{border-top:4px solid var(--gold)}
-.notice-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-.notice-date{display:inline-flex;background:#f8efc9;color:#7c6210;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;letter-spacing:.07em}
-.notice-status{font-size:10px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-.notice-board-card h3{font-family:"Playfair Display",serif;font-size:24px;line-height:1.2;color:var(--green2)}
-.notice-board-card p{color:var(--muted);font-size:13px;line-height:1.65}
-.text-link{display:inline-block;color:var(--green);font-size:12px;font-weight:800;margin-top:7px}
-.text-link:hover{color:var(--red)}
-.notice-board-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px;padding-top:18px;border-top:1px solid #dfe9e4;color:var(--muted);font-size:12px}
-.conference-tools{display:grid;grid-template-columns:minmax(0,1fr) 220px auto;align-items:end;gap:14px;margin:28px 0 10px;padding:18px;background:#fff;border:1px solid #dfe9e4;border-radius:15px}
-.conference-tools label{margin:0;color:var(--green2)}
-.conference-tools input,.conference-tools select{background:#fff}
-.conference-tools .outline{border:1px solid #b9cec4;background:#fff;color:var(--green);border-radius:9px;padding:11px 17px;white-space:nowrap}
-.conference-result-meta{font-size:12px;color:var(--muted);margin:8px 2px 12px}
+/* V1.8 — Membership enrolment digitised from supplied paper form */
+.membership-v18{background:var(--green2);color:#fff}
+.membership-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:32px}
+.membership-heading .lead{max-width:780px;color:#d7e6df;margin:8px 0 0}
+.membership-source{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:15px 18px;min-width:220px}
+.membership-source strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.membership-source span{display:block;color:#d7e6df;font-size:12px;margin-top:5px}
+.membership-grid-v18{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:28px;align-items:start}
+.membership-form-wrap{min-width:0}
+.membership-form-v18{background:#fff;color:var(--ink);padding:30px;border-radius:20px;box-shadow:var(--shadow)}
+.form-title-row{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #e1ebe5;padding-bottom:20px;margin-bottom:20px}
+.form-kicker{font-size:10px;letter-spacing:.12em;font-weight:800;color:var(--red)}
+.form-title-row h3{font-family:"Playfair Display",serif;font-size:29px;margin:5px 0 2px}
+.form-title-row p{margin:0;color:var(--muted);font-size:13px}
+.photo-box{width:82px;height:105px;border:1px dashed #aabdb4;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#83958e;font-size:11px;flex:0 0 auto}
+.form-intro-box{background:#f7faf8;border:1px solid #e2ebe7;border-radius:14px;padding:18px;margin-bottom:22px}
+.form-intro-box>p:first-child{margin-top:0}
+.field-grid{display:grid;gap:14px}
+.field-grid.two{grid-template-columns:1fr 1fr}
+.field-grid label{margin:0}
+.field-grid .full{grid-column:1/-1}
+.required{color:var(--red)}
+.membership-form-v18 textarea{display:block;width:100%;padding:12px 13px;margin-top:6px;border:1px solid #d7e3dd;border-radius:9px;font:inherit;resize:vertical}
+.form-section-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--red);border-bottom:1px solid #e1ebe5;padding-bottom:9px;margin:24px 0 15px}
+.declaration{font-size:13px!important;font-weight:700;margin:16px 0 0!important;color:var(--green2)!important}
+.signature-placeholder{border:1px dashed #c7d6cf;border-radius:10px;padding:15px;margin:18px 0;color:var(--muted);display:flex;justify-content:space-between;gap:15px;align-items:center}
+.signature-placeholder span{font-weight:700}
+.signature-placeholder small{font-size:11px}
+.form-message{margin-top:11px;font-size:11px;color:var(--muted);line-height:1.5}
+.membership-side-v18{display:grid;gap:16px}
+.membership-card-v18{background:#fff;color:var(--ink);border-radius:18px;padding:23px;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.membership-card-v18 h3{font-family:"Playfair Display",serif;font-size:25px;margin:7px 0 12px}
+.membership-card-v18 p{color:var(--muted);font-size:13px;line-height:1.65}
+.category-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}
+.category-list span{background:#f2f6f3;border:1px solid #dfe9e4;border-radius:9px;padding:10px;font-weight:700;color:var(--green);font-size:13px}
+.membership-checklist{margin:12px 0 0;padding-left:18px}
+.membership-checklist li{color:var(--ink);font-size:13px;line-height:1.6;margin-bottom:7px}
+.source-card img{width:100%;border-radius:10px;margin-top:12px;display:block;max-height:300px;object-fit:cover;object-position:top}
 @media(max-width:850px){
-  .notice-board-grid{grid-template-columns:1fr}
-  .conference-tools{grid-template-columns:1fr 1fr}
-  .conference-tools .outline{width:100%}
-  .notice-board-footer{align-items:flex-start;flex-direction:column}
+  .membership-heading{display:block}
+  .membership-source{margin-top:18px}
+  .membership-grid-v18{grid-template-columns:1fr}
 }
-@media(max-width:520px){
-  .conference-tools{grid-template-columns:1fr;padding:15px}
-  .notice-board-card{padding:20px}
-  .notice-board-card h3{font-size:21px}
+@media(max-width:600px){
+  .membership-form-v18{padding:20px}
+  .field-grid.two{grid-template-columns:1fr}
+  .field-grid .full{grid-column:auto}
+  .form-title-row h3{font-size:24px}
+  .signature-placeholder{display:block}
+  .signature-placeholder small{display:block;margin-top:5px}
 }
