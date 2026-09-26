@@ -45,3 +45,7 @@ Membership fees and eligibility were updated from the rules supplied by the Asso
 
 ## V1.8.2 — Member Photo Upload
 The membership form now includes a local photo upload control. Applicants can select a photo from a laptop/desktop file picker or from a mobile phone gallery. The browser shows a preview before submission and accepts image files up to 5 MB. Actual storage of the uploaded image in Google Drive will be connected in the Google Apps Script backend phase.
+
+
+## V1.8.3 — Notices & Announcements restored
+Restored the hero Notices & Announcements panel, scrolling updates, pause/play control, View All Notices link, and a dedicated Notice Board section. Notice data is also stored in `data/notices.json` for future approved updates.

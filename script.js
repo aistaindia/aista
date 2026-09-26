@@ -82,3 +82,24 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
   };
   reader.readAsDataURL(file);
 });
+
+/* V1.8.3 — Notices ticker */
+(function(){
+  const list=document.querySelector('#heroNoticeList');
+  const toggle=document.querySelector('#noticeToggle');
+  if(!list || !toggle) return;
+  let paused=false, offset=0;
+  const step=1;
+  const tick=setInterval(()=>{
+    if(paused) return;
+    offset += step;
+    const max=Math.max(0,list.scrollHeight - 185);
+    if(offset>=max){offset=0;}
+    list.style.transform=`translateY(${-offset}px)`;
+  },60);
+  toggle.addEventListener('click',()=>{
+    paused=!paused;
+    toggle.textContent=paused?'▶':'Ⅱ';
+    toggle.setAttribute('aria-label',paused?'Play notices':'Pause notices');
+  });
+})();
