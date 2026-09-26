@@ -1,4 +1,31 @@
-# The Association of Science Teachers — Website Version 1.6.3
+# The Association of Science Teachers — Website Version 1.7.0
+
+## V1.7.0 — Notices + Conference Archive functionality
+- Added `data/notices.json` as the single source for homepage notices and the full Notice Board.
+- Added `data/notices.csv` as an easy-to-edit spreadsheet-style notice source.
+- Homepage Notices & Announcements now render from the JSON data and retain the bottom-to-top ticker, Pause/Play and View All controls.
+- The full Notice Board is generated from the same notice records, avoiding duplicate HTML content.
+- Conference archive now loads from the existing `data/conferences.json` file instead of duplicating the 53 rows in `index.html`.
+- Added conference search by number, year or location.
+- Added a year filter and Reset control.
+- Added result count for the conference archive.
+- Existing hero slideshow, layout, membership demo, history, branches, activities, publications and gallery are preserved.
+
+## Managing notices
+Edit `data/notices.json` to add or update notices. Use `published: true` for items that should appear on the website. Set `published: false` to keep an item in the data file without displaying it. Use `status: "official"` only after the Association has approved the notice; current starter records are informational placeholders.
+
+Recommended fields:
+- `id` — unique identifier
+- `date` — ISO date such as `2026-09-27`
+- `category` — Notice, Conference, Activities, Membership, etc.
+- `title` — notice headline
+- `description` — short summary
+- `url` — page/document link
+- `status` — `official`, `information`, or `archive`
+- `published` — `true` or `false`
+
+## Managing conferences
+Edit `data/conferences.json` when a verified historical correction or new conference record is required. The website automatically rebuilds the table and filters from this file.
 
 ## V1.6.3 — Hero notice alignment refinement
 - Moved the **Notices & Announcements** panel to the far-right edge of the desktop hero composition.

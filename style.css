@@ -413,3 +413,34 @@ section[id]{scroll-margin-top:96px}
     font-size:11px;
   }
 }
+
+/* V1.7 — Data-driven notices and searchable conference archive */
+.notice-loading{height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;padding:20px;text-align:center}
+.notice-board-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.notice-board-card{background:#fff;border:1px solid #dfe9e4;border-radius:16px;padding:25px;box-shadow:0 8px 24px rgba(15,52,39,.06);transition:transform .2s ease,box-shadow .2s ease}
+.notice-board-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.notice-board-card.featured{border-top:4px solid var(--gold)}
+.notice-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.notice-date{display:inline-flex;background:#f8efc9;color:#7c6210;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;letter-spacing:.07em}
+.notice-status{font-size:10px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.notice-board-card h3{font-family:"Playfair Display",serif;font-size:24px;line-height:1.2;color:var(--green2)}
+.notice-board-card p{color:var(--muted);font-size:13px;line-height:1.65}
+.text-link{display:inline-block;color:var(--green);font-size:12px;font-weight:800;margin-top:7px}
+.text-link:hover{color:var(--red)}
+.notice-board-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px;padding-top:18px;border-top:1px solid #dfe9e4;color:var(--muted);font-size:12px}
+.conference-tools{display:grid;grid-template-columns:minmax(0,1fr) 220px auto;align-items:end;gap:14px;margin:28px 0 10px;padding:18px;background:#fff;border:1px solid #dfe9e4;border-radius:15px}
+.conference-tools label{margin:0;color:var(--green2)}
+.conference-tools input,.conference-tools select{background:#fff}
+.conference-tools .outline{border:1px solid #b9cec4;background:#fff;color:var(--green);border-radius:9px;padding:11px 17px;white-space:nowrap}
+.conference-result-meta{font-size:12px;color:var(--muted);margin:8px 2px 12px}
+@media(max-width:850px){
+  .notice-board-grid{grid-template-columns:1fr}
+  .conference-tools{grid-template-columns:1fr 1fr}
+  .conference-tools .outline{width:100%}
+  .notice-board-footer{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:520px){
+  .conference-tools{grid-template-columns:1fr;padding:15px}
+  .notice-board-card{padding:20px}
+  .notice-board-card h3{font-size:21px}
+}
