@@ -1,0 +1,42 @@
+[
+  {
+    "id": "info-001",
+    "date": "2026-01-01",
+    "category": "Information",
+    "title": "Official notices will be published here",
+    "description": "Approved circulars, conference announcements, programme notices and membership updates will appear here when released by the Association.",
+    "url": "#notice-board",
+    "status": "information",
+    "published": true
+  },
+  {
+    "id": "info-002",
+    "date": "2025-01-01",
+    "category": "Conference",
+    "title": "Conference archive: 1956–2025",
+    "description": "The website preserves the supplied historical record of 53 conferences held from 1956 through 2025.",
+    "url": "#conferences",
+    "status": "archive",
+    "published": true
+  },
+  {
+    "id": "info-003",
+    "date": "2026-01-01",
+    "category": "Activities",
+    "title": "Science education programmes",
+    "description": "Science Day, teacher forums, lectures, competitions and outreach activities can be published here as official reports are approved.",
+    "url": "#activities",
+    "status": "information",
+    "published": true
+  },
+  {
+    "id": "info-004",
+    "date": "2026-01-01",
+    "category": "Membership",
+    "title": "Membership updates",
+    "description": "Membership forms, fees and digital registration instructions will be published after Association approval.",
+    "url": "#membership",
+    "status": "information",
+    "published": true
+  }
+]
