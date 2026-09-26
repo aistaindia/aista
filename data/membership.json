@@ -1,10 +1,8 @@
 {
   "source": "Membership Enrolment Form supplied by the Association",
   "categories": [
-    "Annual",
-    "Life",
-    "Personal",
-    "Institutional"
+    "Ordinary Annual",
+    "Life"
   ],
   "fees": "Not displayed on the supplied form; to be updated when officially confirmed.",
   "payment": [
@@ -29,5 +27,13 @@
     "Photo"
   ],
   "declaration": "I hereby declare to abide by the constitution of AISTA.",
-  "status": "Digital application form prepared from the supplied paper enrolment form. Online submission/database integration is planned for a later version."
+  "status": "Digital application form prepared from the supplied paper enrolment form. Online submission/database integration is planned for a later version.",
+  "eligibility": "Indian citizen aged 18 years or above who is interested in the work of the Society and agrees to its rules.",
+  "admission_fee_inr": 100,
+  "membership_fees_inr": {
+    "Ordinary Annual": 500,
+    "Life": 2500
+  },
+  "application": "Through the prescribed membership form",
+  "approval": "Membership applications are considered by the Managing Committee."
 }
