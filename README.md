@@ -49,3 +49,6 @@ The membership form now includes a local photo upload control. Applicants can se
 
 ## V1.8.3 — Notices & Announcements restored
 Restored the hero Notices & Announcements panel, scrolling updates, pause/play control, View All Notices link, and a dedicated Notice Board section. Notice data is also stored in `data/notices.json` for future approved updates.
+
+## V1.8.4 — Hero Notice Position Fix
+The Notices & Announcements panel is explicitly anchored to the far-right side of the hero slider on desktop/tablet widths. On smaller screens it moves to the bottom of the hero without disappearing.
