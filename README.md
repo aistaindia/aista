@@ -56,3 +56,7 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 
 ## V1.8.5 — Tablet Hero Layout Fix
 At tablet widths, the Notices & Announcements panel is now placed in normal document flow below the hero text instead of being absolutely positioned over the text. This prevents the notice card from hiding the About/hero content on tablets while retaining the right-side overlay design on larger desktop screens.
+
+
+## V1.8.6 — Definitive tablet hero/notices layout
+On tablet and mobile widths, the hero visual area and the Notices & Announcements panel are now separate vertical areas. The notice panel no longer overlays the hero text or the following administrative/about content. Desktop keeps the right-side overlay design.

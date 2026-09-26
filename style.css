@@ -355,3 +355,66 @@ section[id]{scroll-margin-top:96px}
   .hero-content{padding:48px 0 28px !important}
   .hero-notices{margin:0 0 20px !important;max-width:none !important}
 }
+
+
+/* V1.8.6 — Definitive tablet fix: keep hero text and notices in separate visual areas */
+@media (min-width:601px) and (max-width:1000px){
+  .hero{
+    display:block !important;
+    min-height:0 !important;
+    background:var(--green) !important;
+    overflow:hidden !important;
+  }
+  .hero-slideshow,
+  .hero-overlay{
+    height:560px !important;
+    bottom:auto !important;
+  }
+  .hero-content{
+    min-height:560px !important;
+    max-width:none !important;
+    padding:72px 0 42px !important;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative !important;
+  }
+  .hero-content .hero-fact{margin-top:28px}
+  .hero-notices{
+    position:relative !important;
+    inset:auto !important;
+    transform:none !important;
+    width:min(680px,92%) !important;
+    max-width:680px !important;
+    margin:0 auto 34px !important;
+    background:var(--green2) !important;
+    box-shadow:0 12px 30px rgba(0,0,0,.15) !important;
+  }
+  .notice-window{height:150px !important}
+}
+
+@media (max-width:600px){
+  .hero{
+    display:block !important;
+    min-height:0 !important;
+    background:var(--green) !important;
+  }
+  .hero-slideshow,
+  .hero-overlay{height:600px !important;bottom:auto !important}
+  .hero-content{
+    min-height:600px !important;
+    padding:55px 0 30px !important;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .hero-notices{
+    position:relative !important;
+    inset:auto !important;
+    transform:none !important;
+    width:92% !important;
+    max-width:none !important;
+    margin:0 auto 22px !important;
+    background:var(--green2) !important;
+  }
+}
