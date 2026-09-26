@@ -52,3 +52,7 @@ Restored the hero Notices & Announcements panel, scrolling updates, pause/play c
 
 ## V1.8.4 — Hero Notice Position Fix
 The Notices & Announcements panel is explicitly anchored to the far-right side of the hero slider on desktop/tablet widths. On smaller screens it moves to the bottom of the hero without disappearing.
+
+
+## V1.8.5 — Tablet Hero Layout Fix
+At tablet widths, the Notices & Announcements panel is now placed in normal document flow below the hero text instead of being absolutely positioned over the text. This prevents the notice card from hiding the About/hero content on tablets while retaining the right-side overlay design on larger desktop screens.
