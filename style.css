@@ -190,19 +190,20 @@ section[id]{scroll-margin-top:96px}
 
 /* V1.5 top-notices layout retired in V1.6. Notices now live inside the hero beside the headline. */
 
-/* Version 1.6 — Hero notices integrated beside the headline */
+/* Version 1.6.3 — Desktop hero notice panel aligned to the far right */
 .hero{
   min-height:680px;
 }
 .hero-shell{
   position:relative;
   z-index:2;
-  width:min(1240px,94%);
+  width:96%;
+  max-width:none;
   min-height:680px;
   display:grid;
-  grid-template-columns:minmax(0,1.26fr) minmax(340px,.70fr);
+  grid-template-columns:minmax(0,1fr) 420px;
   align-items:center;
-  gap:64px;
+  gap:52px;
 }
 .hero-content{
   padding:78px 0;
@@ -213,9 +214,9 @@ section[id]{scroll-margin-top:96px}
 }
 .hero-notices{
   width:100%;
-  max-width:470px;
+  max-width:440px;
   justify-self:end;
-  transform:translateX(14px);
+  transform:none;
   color:var(--ink);
   background:rgba(255,255,255,.96);
   border:1px solid rgba(255,255,255,.7);
