@@ -1,0 +1,267 @@
+[
+  {
+    "conference": "1st",
+    "year": "1956",
+    "place": "Gwalior"
+  },
+  {
+    "conference": "2nd",
+    "year": "1957",
+    "place": "Madras"
+  },
+  {
+    "conference": "3rd",
+    "year": "1958",
+    "place": "Delhi"
+  },
+  {
+    "conference": "4th",
+    "year": "1959",
+    "place": "Jabalpur"
+  },
+  {
+    "conference": "5th",
+    "year": "1960",
+    "place": "Kanpur"
+  },
+  {
+    "conference": "6th",
+    "year": "1961",
+    "place": "Udaipur"
+  },
+  {
+    "conference": "7th",
+    "year": "1962",
+    "place": "Hyderabad"
+  },
+  {
+    "conference": "8th",
+    "year": "1963",
+    "place": "Ahmedabad"
+  },
+  {
+    "conference": "9th",
+    "year": "1964",
+    "place": "Nagpur"
+  },
+  {
+    "conference": "10th",
+    "year": "1965",
+    "place": "Patna"
+  },
+  {
+    "conference": "11th",
+    "year": "1966",
+    "place": "Poona"
+  },
+  {
+    "conference": "12th",
+    "year": "1967",
+    "place": "Guwahati"
+  },
+  {
+    "conference": "13th",
+    "year": "1968",
+    "place": "Ambala Cantt."
+  },
+  {
+    "conference": "14th",
+    "year": "1969",
+    "place": "Bangalore"
+  },
+  {
+    "conference": "15th",
+    "year": "1970",
+    "place": "New Delhi"
+  },
+  {
+    "conference": "16th",
+    "year": "1972",
+    "place": "Bhubaneswar"
+  },
+  {
+    "conference": "17th",
+    "year": "1973",
+    "place": "Madras"
+  },
+  {
+    "conference": "18th",
+    "year": "1974",
+    "place": "Amritsar"
+  },
+  {
+    "conference": "19th",
+    "year": "1975",
+    "place": "Calcutta"
+  },
+  {
+    "conference": "20th",
+    "year": "1976",
+    "place": "Agra"
+  },
+  {
+    "conference": "21st",
+    "year": "1977",
+    "place": "Srinagar"
+  },
+  {
+    "conference": "22nd",
+    "year": "1978",
+    "place": "Trivandrum"
+  },
+  {
+    "conference": "23rd",
+    "year": "1979",
+    "place": "Patna"
+  },
+  {
+    "conference": "24th",
+    "year": "1980",
+    "place": "Jabalpur"
+  },
+  {
+    "conference": "25th",
+    "year": "1981",
+    "place": "New Delhi"
+  },
+  {
+    "conference": "26th",
+    "year": "1982",
+    "place": "Hyderabad"
+  },
+  {
+    "conference": "27th",
+    "year": "1983",
+    "place": "Baroda"
+  },
+  {
+    "conference": "28th",
+    "year": "1985",
+    "place": "Jaipur"
+  },
+  {
+    "conference": "29th",
+    "year": "1986",
+    "place": "Madras"
+  },
+  {
+    "conference": "30th",
+    "year": "1987",
+    "place": "Bharwari, U.P."
+  },
+  {
+    "conference": "31st",
+    "year": "1988",
+    "place": "New Delhi"
+  },
+  {
+    "conference": "32nd",
+    "year": "1989",
+    "place": "Mysore"
+  },
+  {
+    "conference": "33rd",
+    "year": "1991",
+    "place": "Jaipur"
+  },
+  {
+    "conference": "34th",
+    "year": "1993",
+    "place": "Dehara Dun"
+  },
+  {
+    "conference": "35th",
+    "year": "1998",
+    "place": "Ajmer"
+  },
+  {
+    "conference": "36th",
+    "year": "1999",
+    "place": "Calcutta"
+  },
+  {
+    "conference": "37th",
+    "year": "2000",
+    "place": "Patiala"
+  },
+  {
+    "conference": "38th",
+    "year": "2002",
+    "place": "Nagpur"
+  },
+  {
+    "conference": "39th",
+    "year": "2004",
+    "place": "Patna"
+  },
+  {
+    "conference": "40th",
+    "year": "2005",
+    "place": "Kolkata"
+  },
+  {
+    "conference": "41st",
+    "year": "2006",
+    "place": "Nagpur (Golden Jubilee Conference)"
+  },
+  {
+    "conference": "42nd",
+    "year": "2008",
+    "place": "Bhandara, Maharashtra"
+  },
+  {
+    "conference": "43rd",
+    "year": "2009",
+    "place": "Kunigal, Tumkur, Karnataka"
+  },
+  {
+    "conference": "44th",
+    "year": "2010",
+    "place": "Trivandrum, Kerala"
+  },
+  {
+    "conference": "45th",
+    "year": "2014",
+    "place": "Nagpur, Maharashtra"
+  },
+  {
+    "conference": "46th",
+    "year": "2015",
+    "place": "Patna, Bihar"
+  },
+  {
+    "conference": "47th",
+    "year": "2016",
+    "place": "New Delhi"
+  },
+  {
+    "conference": "48th",
+    "year": "2017",
+    "place": "Ranchi, Jharkhand"
+  },
+  {
+    "conference": "49th",
+    "year": "2018",
+    "place": "B.H.U., Varanasi, Uttar Pradesh"
+  },
+  {
+    "conference": "50th",
+    "year": "2019",
+    "place": "Bhubaneswar, Odisha"
+  },
+  {
+    "conference": "51st",
+    "year": "January 2024",
+    "place": "Simultala, Jamui, Bihar"
+  },
+  {
+    "conference": "52nd",
+    "year": "2024",
+    "place": "Kushinagar, Uttar Pradesh"
+  },
+  {
+    "conference": "53rd",
+    "year": "2025",
+    "place": "Chakrapani Residential School, Rajgir, Nalanda, Bihar"
+  }
+]
