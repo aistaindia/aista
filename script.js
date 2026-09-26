@@ -13,3 +13,40 @@ document.querySelector('#membershipForm')?.addEventListener('submit',e=>{e.preve
     slides[current].classList.add('active');
   },5000);
 })();
+
+
+/* Official notices ticker — newest notice enters from the bottom and moves upward. */
+(function(){
+  const ticker=document.querySelector('.notice-ticker');
+  const track=document.querySelector('.notice-ticker-track');
+  const items=[...document.querySelectorAll('.notice-item')];
+  const pauseBtn=document.querySelector('.ticker-pause');
+  if(!ticker || !track || items.length<2) return;
+  let index=0, paused=false, timer;
+  const height=82;
+  const step=()=>{
+    if(paused) return;
+    index=(index+1)%items.length;
+    track.style.transition='transform 700ms ease';
+    track.style.transform=`translateY(-${index*height}px)`;
+    if(index===items.length-1){
+      window.setTimeout(()=>{
+        track.style.transition='none';
+        track.style.transform='translateY(0)';
+        index=0;
+      },760);
+    }
+  };
+  const start=()=>{clearInterval(timer);timer=setInterval(step,4200)};
+  pauseBtn?.addEventListener('click',()=>{
+    paused=!paused;
+    pauseBtn.textContent=paused?'Play':'Pause';
+    pauseBtn.setAttribute('aria-label',paused?'Play announcements':'Pause announcements');
+    if(!paused) start();
+  });
+  ticker.addEventListener('mouseenter',()=>{paused=true;});
+  ticker.addEventListener('mouseleave',()=>{if(pauseBtn?.textContent==='Pause'){paused=false;start();}});
+  ticker.addEventListener('focusin',()=>{paused=true;});
+  ticker.addEventListener('focusout',()=>{if(pauseBtn?.textContent==='Pause'){paused=false;start();}});
+  start();
+})();
