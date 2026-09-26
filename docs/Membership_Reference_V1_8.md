@@ -1,36 +1,21 @@
-# Membership Reference — V1.8
+# Membership Reference — V1.8.1
 
-V1.8 digitises the Membership Enrolment Form supplied by the Association.
+Updated from the membership rules supplied by the Association.
 
-## Membership categories shown on the supplied form
-- Annual
-- Life
-- Personal
-- Institutional
+## Eligibility
+An Indian citizen aged 18 years or above who is interested in the work of the Society and agrees to its rules may apply for membership.
 
-## Fields transcribed
-- Name
-- Date of Birth
-- Designation & Post
-- Qualification
-- Institution's Name
-- Postal Address
-- Permanent Address
-- Pin Code
-- Telephone No.
-- Mobile No.
-- E-mail
-- Place
-- Date
-- Signature
-- Photo
+## Fees
+- Admission fee: Rs. 100
+- Ordinary Annual Membership: Rs. 500
+- Life Membership: Rs. 2,500
 
-## Other form elements
-- Amount (Rs.)
-- Payment by Cheque/Cash
-- Declaration to abide by the constitution of AISTA
+## Application and approval
+- Application through the prescribed membership form.
+- Membership applications are considered by the Managing Committee.
 
-## Important
-No membership fee has been hard-coded in V1.8 because the supplied form image does not show a fee amount. Update the website when the Association provides the approved fee/payment rules.
+## Website behavior
+Selecting **Ordinary Annual** automatically populates the membership fee as ₹500 and total payable as ₹600 including admission fee.
+Selecting **Life** automatically populates the membership fee as ₹2,500 and total payable as ₹2,600 including admission fee.
 
-The digital form is currently a front-end prototype. Database storage, email acknowledgement, document upload, payment and membership-number generation can be added in later versions.
+No fee is manually entered by the applicant.
