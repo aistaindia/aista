@@ -1,4 +1,4 @@
-## V1.2.1 update
+## V1.6 update
 
 - Replaced the website logo with the latest official logo supplied for **The Association of Science Teachers**.
 - Homepage, hero slideshow, About page and 1st–53rd conference archive from V1.2 are preserved.
@@ -33,3 +33,10 @@ Upload/replace the files in the repository root and keep the `assets` folder int
 - Added the complete supplied 1st–53rd conference chronology (1956–2025).
 - Added recent conference milestones: 51st Simultala (Jan. 2024), 52nd Kushinagar (2024), 53rd Rajgir/Nalanda (2025).
 - Preserved the existing hero slideshow, logo, navigation, membership and contact sections.
+
+
+### V1.6 — Homepage notice panel
+- Official Notices & Announcements now appears beside the hero headline on desktop.
+- Existing hero conference slideshow remains behind the content.
+- Bottom-to-top notice ticker with pause/play and View All link.
+- Responsive layout stacks the notice panel below the hero text on smaller screens.

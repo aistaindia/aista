@@ -15,38 +15,62 @@ document.querySelector('#membershipForm')?.addEventListener('submit',e=>{e.preve
 })();
 
 
-/* Official notices ticker — newest notice enters from the bottom and moves upward. */
+/* Version 1.6 — Official notices ticker: bottom-to-top, pause on interaction */
 (function(){
   const ticker=document.querySelector('.notice-ticker');
   const track=document.querySelector('.notice-ticker-track');
   const items=[...document.querySelectorAll('.notice-item')];
   const pauseBtn=document.querySelector('.ticker-pause');
   if(!ticker || !track || items.length<2) return;
-  let index=0, paused=false, timer;
-  const height=82;
+
+  const stepHeight=82;
+  let index=0;
+  let paused=false;
+  let timer=null;
+
+  const render=(animate=true)=>{
+    track.style.transition=animate ? 'transform 700ms ease' : 'none';
+    track.style.transform=`translateY(-${index*stepHeight}px)`;
+  };
+
   const step=()=>{
     if(paused) return;
-    index=(index+1)%items.length;
-    track.style.transition='transform 700ms ease';
-    track.style.transform=`translateY(-${index*height}px)`;
-    if(index===items.length-1){
+    index+=1;
+    render(true);
+
+    if(index===items.length){
       window.setTimeout(()=>{
-        track.style.transition='none';
-        track.style.transform='translateY(0)';
         index=0;
+        render(false);
       },760);
     }
   };
-  const start=()=>{clearInterval(timer);timer=setInterval(step,4200)};
-  pauseBtn?.addEventListener('click',()=>{
-    paused=!paused;
-    pauseBtn.textContent=paused?'Play':'Pause';
-    pauseBtn.setAttribute('aria-label',paused?'Play announcements':'Pause announcements');
-    if(!paused) start();
-  });
-  ticker.addEventListener('mouseenter',()=>{paused=true;});
-  ticker.addEventListener('mouseleave',()=>{if(pauseBtn?.textContent==='Pause'){paused=false;start();}});
-  ticker.addEventListener('focusin',()=>{paused=true;});
-  ticker.addEventListener('focusout',()=>{if(pauseBtn?.textContent==='Pause'){paused=false;start();}});
-  start();
+
+  const start=()=>{
+    clearInterval(timer);
+    timer=window.setInterval(step,4200);
+  };
+
+  const setPaused=(value)=>{
+    paused=value;
+    if(pauseBtn){
+      pauseBtn.textContent=paused?'Play':'Pause';
+      pauseBtn.setAttribute('aria-label',paused?'Play announcements':'Pause announcements');
+      pauseBtn.setAttribute('aria-pressed',String(paused));
+    }
+    if(paused) clearInterval(timer);
+    else start();
+  };
+
+  pauseBtn?.addEventListener('click',()=>setPaused(!paused));
+  ticker.addEventListener('mouseenter',()=>setPaused(true));
+  ticker.addEventListener('mouseleave',()=>{ if(pauseBtn?.getAttribute('aria-pressed')!=='true') setPaused(false); });
+  ticker.addEventListener('focusin',()=>setPaused(true));
+  ticker.addEventListener('focusout',()=>{ if(pauseBtn?.getAttribute('aria-pressed')!=='true') setPaused(false); });
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setPaused(true);
+  } else {
+    start();
+  }
 })();

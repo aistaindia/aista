@@ -219,3 +219,225 @@ section[id]{scroll-margin-top:96px}
 @media(max-width:850px){.top-notices-inner{grid-template-columns:1fr;gap:16px}.top-notices-heading h2{font-size:27px}.notice-board-grid{grid-template-columns:1fr}.notice-board-footer{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.top-notices{padding:20px 0}.notice-item{grid-template-columns:76px 1fr;gap:10px}.notice-item b{font-size:13px}.notice-item p{font-size:11px}.notice-badge{font-size:8px}.notice-ticker-controls{align-items:flex-start}.notice-view-all{font-size:10px;padding:8px 10px}.notice-board-card{padding:20px}}
 @media(prefers-reduced-motion:reduce){.notice-ticker-track{transition:none!important}.hero-slide{transition:none!important}}
+
+
+/* Version 1.6 — Hero notices integrated beside the headline */
+.hero{
+  min-height:680px;
+}
+.hero-shell{
+  position:relative;
+  z-index:2;
+  width:min(1240px,94%);
+  min-height:680px;
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(360px,.72fr);
+  align-items:center;
+  gap:58px;
+}
+.hero-content{
+  padding:78px 0;
+  min-width:0;
+}
+.hero-content p{
+  max-width:680px;
+}
+.hero-notices{
+  width:100%;
+  max-width:480px;
+  justify-self:end;
+  color:var(--ink);
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  padding:25px;
+  box-shadow:0 22px 60px rgba(0,0,0,.22);
+  backdrop-filter:blur(12px);
+}
+.hero-notices-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:17px;
+}
+.hero-notices-head .section-tag{
+  display:block;
+  color:#9a7a12;
+  margin-bottom:4px;
+}
+.hero-notices h2{
+  font-size:29px;
+  line-height:1.1;
+  margin:0;
+  color:var(--green2);
+}
+.hero-notices-live{
+  flex:0 0 auto;
+  background:#eaf5ef;
+  color:var(--green);
+  border:1px solid #cfe4d9;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+.hero-notices .notice-ticker{
+  overflow:hidden;
+}
+.notice-ticker-window{
+  height:252px;
+  overflow:hidden;
+  position:relative;
+  border-top:1px solid #e6eee9;
+  border-bottom:1px solid #e6eee9;
+}
+.notice-ticker-track{
+  will-change:transform;
+}
+.hero-notices .notice-item{
+  min-height:82px;
+  height:82px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:start;
+  gap:12px;
+  padding:13px 4px;
+  color:var(--ink);
+  border-bottom:1px solid #edf2ef;
+  transition:background .2s ease;
+}
+.hero-notices .notice-item:hover,
+.hero-notices .notice-item:focus-visible{
+  background:#f6faf7;
+  outline:none;
+}
+.notice-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  padding:5px 7px;
+  border-radius:999px;
+  background:#f8efc9;
+  color:#7c6210;
+  font-size:9px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.hero-notices .notice-item b{
+  display:block;
+  font-size:13px;
+  line-height:1.3;
+  color:var(--green2);
+}
+.hero-notices .notice-item p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+.notice-ticker-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:17px;
+}
+.ticker-pause{
+  border:0;
+  background:#edf4f0;
+  color:var(--green);
+  border-radius:8px;
+  padding:8px 12px;
+  font:600 11px "DM Sans",sans-serif;
+  cursor:pointer;
+}
+.ticker-pause:hover{
+  background:#e1ece7;
+}
+.notice-view-all{
+  color:var(--green);
+  font-size:12px;
+  font-weight:800;
+  text-align:right;
+}
+.notice-view-all:hover{
+  color:var(--red);
+}
+.hero-notices .notice-ticker-controls{
+  border-top:0;
+}
+
+/* Keep the standalone administrative banner below the hero */
+.notice-strip{
+  margin:28px auto 10px;
+}
+
+/* Improve reduced-motion accessibility */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-slide{transition:none}
+  .hero-slide.active{transform:none}
+}
+
+/* Tablet/mobile: stack the notices below the hero copy while retaining the same component */
+@media(max-width:1000px){
+  .hero{
+    min-height:auto;
+  }
+  .hero-shell{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:58px 0 65px;
+    min-height:auto;
+  }
+  .hero-content{
+    padding:0;
+  }
+  .hero-notices{
+    justify-self:stretch;
+    max-width:none;
+    margin-top:15px;
+  }
+}
+@media(max-width:520px){
+  .hero-shell{
+    width:min(94%,520px);
+    padding:45px 0 50px;
+  }
+  .hero h1{
+    font-size:42px;
+  }
+  .hero-notices{
+    padding:18px;
+    border-radius:17px;
+  }
+  .hero-notices h2{
+    font-size:24px;
+  }
+  .notice-ticker-window{
+    height:246px;
+  }
+  .hero-notices .notice-item{
+    grid-template-columns:1fr;
+    height:82px;
+    min-height:82px;
+    gap:5px;
+    padding:10px 2px;
+  }
+  .notice-badge{
+    justify-self:start;
+  }
+  .hero-notices .notice-item p{
+    display:none;
+  }
+  .notice-ticker-controls{
+    align-items:center;
+  }
+  .notice-view-all{
+    font-size:11px;
+  }
+}
