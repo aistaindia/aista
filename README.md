@@ -1,3 +1,20 @@
+## V1.6.2 layout refinement
+
+- Shifted the hero Notices & Announcements panel slightly farther right for cleaner alignment with the hero composition.
+- Increased separation between the hero copy and notice panel on desktop.
+- Kept tablet/mobile stacking unchanged.
+
+# The Association of Science Teachers — Website V1.6.1
+
+## V1.6.1 homepage notice placement
+- Official Notices & Announcements are integrated **inside the hero**, to the right of the main headline on desktop.
+- The notices ticker moves **bottom-to-top** automatically.
+- Pause/Play and View All controls are included.
+- At tablet/mobile widths, the notice card stacks below the hero copy.
+- The old standalone V1.5 top-notices block has been retired.
+
+## GitHub Pages
+Keep `index.html` at the repository root and publish the `main` branch (or the configured Pages branch).
 ## V1.6 update
 
 - Replaced the website logo with the latest official logo supplied for **The Association of Science Teachers**.
