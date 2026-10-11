@@ -5,15 +5,19 @@
     "title": "Membership enrolment information",
     "summary": "Membership categories and applicable fees are available in the membership section.",
     "type": "Membership",
-    "official": false
+    "official": false,
+    "linkTarget": "#membership",
+    "pdfUrl": ""
   },
   {
     "id": "committee-review",
     "date": "Current",
-    "title": "Membership applications",
-    "summary": "Membership applications are considered by the Managing Committee.",
+    "title": "National Managing Committee",
+    "summary": "Meet the office bearers and members guiding the work of The Association of Science Teachers.",
     "type": "Association",
-    "official": false
+    "official": false,
+    "linkTarget": "#committee",
+    "pdfUrl": ""
   },
   {
     "id": "archive-update",
@@ -21,6 +25,8 @@
     "title": "Association archive",
     "summary": "Conference history, activities, publications and gallery material are being organised for the website.",
     "type": "Website",
-    "official": false
+    "official": false,
+    "linkTarget": "#conferences",
+    "pdfUrl": ""
   }
 ]
