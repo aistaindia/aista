@@ -367,3 +367,7 @@ section[id]{scroll-margin-top:96px}
 #memberSignature{display:block;max-width:100%;font:inherit;font-size:12px;color:#203b31}
 #signaturePreview{display:none;max-width:100%;max-height:100px;object-fit:contain}
 #signatureHelp{font-size:11px;color:#455e53;line-height:1.45}
+
+/* V1.8.11: make the official registration number prominent in the top bar */
+.registration-banner{font-weight:800;letter-spacing:.02em;color:#fff}
+@media(max-width:850px){.topbar-inner{display:flex;justify-content:center;text-align:center;padding:7px 8px;gap:10px;flex-wrap:wrap;font-size:11px}.registration-banner{font-size:11px}}
