@@ -96,3 +96,11 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Kept the side-by-side hero layout on wider desktop screens and made the tablet/mobile layout responsive.
 - Restored the light-yellow Administrative Update panel and combined the continuity statement with Registration No. S000529/2025-26 in the same panel.
 - Preserved the current official contact, membership, notice, and committee content.
+
+
+## V1.8.13 — Membership application-first workflow
+- Payment is disabled during application submission; membership fees remain informational only.
+- Applicants submit details, photo and signature for committee review.
+- Added Google Apps Script backend starter at `backend/MembershipAppsScript.gs` for Google Sheets storage and email notification to `tastorg.india@gmail.com`.
+- Follow `docs/MEMBERSHIP_APPLICATION_WORKFLOW_V1_8_13.md` to create the sheet, deploy the endpoint and configure `MEMBERSHIP_SUBMISSION_URL` in `script.js`.
+- The live form does not store/send applications until the one-time backend deployment is completed and the URL is added. Test before announcing applications are open.

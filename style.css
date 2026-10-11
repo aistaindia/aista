@@ -393,3 +393,11 @@ section[id]{scroll-margin-top:96px}
   .notice-strip .admin-registration-copy{font-size:13px}
   .notice-strip .admin-registration-copy strong{font-size:13px!important}
 }
+
+
+/* V1.8.13 — application-first membership workflow */
+.application-process-note{display:flex;flex-direction:column;gap:6px;padding:14px 15px;margin:12px 0 6px;border:1px solid #d7e8dc;border-left:4px solid #2c7656;background:#eff8f1;border-radius:9px;color:#234b38;font-size:13px;line-height:1.55}
+.application-process-note strong{font-size:14px;color:#174a31}
+.form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+#membershipSubmit:disabled{opacity:.65;cursor:wait}
+.form-message{font-size:12px!important}
