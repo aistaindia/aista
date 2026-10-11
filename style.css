@@ -328,93 +328,24 @@ section[id]{scroll-margin-top:96px}
   .hero-notices{bottom:18px !important}
 }
 
-/* V1.8.5 — Tablet layout fix: notices must never cover hero text */
-@media (max-width:1000px){
-  .hero{
-    display:block;
-    min-height:0 !important;
-    padding-bottom:0;
-  }
-  .hero-content{
-    max-width:none !important;
-    padding:65px 0 35px !important;
-  }
-  .hero-notices{
-    position:relative !important;
-    top:auto !important;
-    right:auto !important;
-    bottom:auto !important;
-    left:auto !important;
-    transform:none !important;
-    width:auto !important;
-    max-width:680px !important;
-    margin:0 auto 28px !important;
-  }
-}
-@media (max-width:600px){
-  .hero-content{padding:48px 0 28px !important}
-  .hero-notices{margin:0 0 20px !important;max-width:none !important}
-}
 
+/* V1.8.5 — National Managing Committee */
+.committee-section .section-intro{max-width:760px;color:var(--muted,#5f665f);line-height:1.7;margin:0 0 28px}
+.committee-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:28px}
+.committee-card{background:#fff;border:1px solid rgba(25,35,25,.09);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 8px 26px rgba(20,35,20,.06);min-width:0}
+.committee-card h3{font-size:1rem;line-height:1.4;margin:15px 0 6px;color:#20271f}
+.committee-card p{font-size:.9rem;line-height:1.45;color:#7a672d;margin:0}
+.committee-president{grid-column:span 2}
+.committee-photo{width:132px;height:150px;margin:0 auto;border-radius:12px;overflow:hidden;background:#e8e8e2;display:flex;align-items:center;justify-content:center}
+.committee-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-placeholder{background:linear-gradient(145deg,#f4eee0,#deded5);border:1px dashed #b9b3a1;color:#8a7950}
+.photo-placeholder span{font-size:2rem;font-weight:700;letter-spacing:.04em}
+.committee-note{font-size:.82rem;line-height:1.6;color:#74776f;margin-top:24px}
+@media(max-width:900px){.committee-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.committee-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.committee-card{padding:16px 10px}.committee-photo{width:108px;height:124px}.committee-president{grid-column:span 2}.committee-card h3{font-size:.92rem}}
 
-/* V1.8.6 — Definitive tablet fix: keep hero text and notices in separate visual areas */
-@media (min-width:601px) and (max-width:1000px){
-  .hero{
-    display:block !important;
-    min-height:0 !important;
-    background:var(--green) !important;
-    overflow:hidden !important;
-  }
-  .hero-slideshow,
-  .hero-overlay{
-    height:560px !important;
-    bottom:auto !important;
-  }
-  .hero-content{
-    min-height:560px !important;
-    max-width:none !important;
-    padding:72px 0 42px !important;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative !important;
-  }
-  .hero-content .hero-fact{margin-top:28px}
-  .hero-notices{
-    position:relative !important;
-    inset:auto !important;
-    transform:none !important;
-    width:min(680px,92%) !important;
-    max-width:680px !important;
-    margin:0 auto 34px !important;
-    background:var(--green2) !important;
-    box-shadow:0 12px 30px rgba(0,0,0,.15) !important;
-  }
-  .notice-window{height:150px !important}
-}
-
-@media (max-width:600px){
-  .hero{
-    display:block !important;
-    min-height:0 !important;
-    background:var(--green) !important;
-  }
-  .hero-slideshow,
-  .hero-overlay{height:600px !important;bottom:auto !important}
-  .hero-content{
-    min-height:600px !important;
-    padding:55px 0 30px !important;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  .hero-notices{
-    position:relative !important;
-    inset:auto !important;
-    transform:none !important;
-    width:92% !important;
-    max-width:none !important;
-    margin:0 auto 22px !important;
-    background:var(--green2) !important;
-  }
-}
+/* V1.8.6 — registration history, office address and bank details */
+.registration-meta,.bank-details{background:#fff;border:1px solid rgba(25,35,25,.10);border-radius:14px;padding:18px 20px;margin-top:20px}
+.registration-meta p,.bank-details p{margin:7px 0;line-height:1.6}
+.bank-details h3{margin:0 0 12px}
+.small-note{font-size:.82rem;color:#777}

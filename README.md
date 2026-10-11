@@ -54,9 +54,15 @@ Restored the hero Notices & Announcements panel, scrolling updates, pause/play c
 The Notices & Announcements panel is explicitly anchored to the far-right side of the hero slider on desktop/tablet widths. On smaller screens it moves to the bottom of the hero without disappearing.
 
 
-## V1.8.5 — Tablet Hero Layout Fix
-At tablet widths, the Notices & Announcements panel is now placed in normal document flow below the hero text instead of being absolutely positioned over the text. This prevents the notice card from hiding the About/hero content on tablets while retaining the right-side overlay design on larger desktop screens.
+## Version 1.8.5 — National Managing Committee
+- Added a dedicated National Managing Committee section and navigation link.
+- Public display is limited to names and designations, with a photo slot for each person.
+- Replace the temporary initials placeholders with approved portrait files before publishing. To do so, add each image under `assets/committee/` and replace the corresponding `photo-placeholder` element in `index.html` with an `<img>` element using that image path.
+- The published section does not show personal phone numbers, home addresses or email addresses.
 
 
-## V1.8.6 — Definitive tablet hero/notices layout
-On tablet and mobile widths, the hero visual area and the Notices & Announcements panel are now separate vertical areas. The notice panel no longer overlays the hero text or the following administrative/about content. Desktop keeps the right-side overlay design.
+## Version 1.8.6 — Registration details and office information
+- Added a Registration & Continuity section based on the handwritten introduction supplied by the Association.
+- Added registration number S000529/2025-26 and registration date 30 March 2026.
+- Added the Head Office / Registered Office address and bank account details supplied by the Association.
+- The account holder name is flagged for confirmation; verify the bank-registered account name and details before accepting payments.
