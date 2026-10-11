@@ -73,3 +73,11 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Removed initials such as RP/BP/RS from the visible committee cards.
 - Standardised card spacing, portrait dimensions, names and designations for desktop, tablet and mobile layouts.
 - Public committee section intentionally excludes personal addresses and phone numbers.
+
+
+## Version 1.8.8 updates
+- Removed the repeated Registered Office address from the Contact section.
+- Updated the official phone number to 9631174778.
+- Removed the clarification in brackets after the bank account name.
+- Removed the duplicate address card from the National Network section; visitors are directed to the single Registered Office & Contact section.
+- Updated the footer to show the same Head Office / Registered Office address.

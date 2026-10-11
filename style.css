@@ -172,7 +172,7 @@ section[id]{scroll-margin-top:96px}
 @media(max-width:520px){.mission-panel{padding:22px}.mission-points{grid-template-columns:1fr}.aims-methods{padding:20px}}
 
 /* V1.4 Branches / Network */
-.network-intro{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;margin-top:30px}
+.network-intro{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:30px}
 .network-copy,.office-card{background:#fff;border:1px solid #e1ebe5;border-radius:18px;padding:30px;box-shadow:0 8px 28px rgba(19,61,51,.06)}
 .network-copy h3,.office-card h3{font-family:"Playfair Display",serif;font-size:28px;margin:8px 0 10px}
 .network-copy p,.office-card p{color:var(--muted);line-height:1.75}
