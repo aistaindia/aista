@@ -331,18 +331,18 @@ section[id]{scroll-margin-top:96px}
 
 /* V1.8.5 — National Managing Committee */
 .committee-section .section-intro{max-width:760px;color:var(--muted,#5f665f);line-height:1.7;margin:0 0 28px}
-.committee-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:28px}
-.committee-card{background:#fff;border:1px solid rgba(25,35,25,.09);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 8px 26px rgba(20,35,20,.06);min-width:0}
+.committee-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:24px;margin-top:30px}
+.committee-card{background:#fff;border:1px solid rgba(25,35,25,.09);border-radius:18px;padding:22px 16px 24px;text-align:center;box-shadow:0 8px 26px rgba(20,35,20,.06);min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;transition:transform .2s ease,box-shadow .2s ease}.committee-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,35,20,.11)}
 .committee-card h3{font-size:1rem;line-height:1.4;margin:15px 0 6px;color:#20271f}
 .committee-card p{font-size:.9rem;line-height:1.45;color:#7a672d;margin:0}
-.committee-president{grid-column:span 2}
-.committee-photo{width:132px;height:150px;margin:0 auto;border-radius:12px;overflow:hidden;background:#e8e8e2;display:flex;align-items:center;justify-content:center}
-.committee-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.committee-president{grid-column:span 1}
+.committee-photo{width:142px;height:164px;margin:0 auto;border-radius:12px;overflow:hidden;background:#e8e8e2;display:flex;align-items:center;justify-content:center;border:1px solid rgba(25,35,25,.12)}
+.committee-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .photo-placeholder{background:linear-gradient(145deg,#f4eee0,#deded5);border:1px dashed #b9b3a1;color:#8a7950}
 .photo-placeholder span{font-size:2rem;font-weight:700;letter-spacing:.04em}
 .committee-note{font-size:.82rem;line-height:1.6;color:#74776f;margin-top:24px}
-@media(max-width:900px){.committee-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){.committee-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.committee-card{padding:16px 10px}.committee-photo{width:108px;height:124px}.committee-president{grid-column:span 2}.committee-card h3{font-size:.92rem}}
+@media(max-width:1000px){.committee-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.committee-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.committee-card{padding:16px 10px}.committee-photo{width:108px;height:124px}.committee-president{grid-column:span 1}.committee-card h3{font-size:.92rem}}
 
 /* V1.8.6 — registration history, office address and bank details */
 .registration-meta,.bank-details{background:#fff;border:1px solid rgba(25,35,25,.10);border-radius:14px;padding:18px 20px;margin-top:20px}

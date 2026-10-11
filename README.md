@@ -66,3 +66,10 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Added registration number S000529/2025-26 and registration date 30 March 2026.
 - Added the Head Office / Registered Office address and bank account details supplied by the Association.
 - The account holder name is flagged for confirmation; verify the bank-registered account name and details before accepting payments.
+
+
+## Version 1.8.7 — National Managing Committee photo update
+- Replaced initials placeholders with the supplied individual committee photographs.
+- Removed initials such as RP/BP/RS from the visible committee cards.
+- Standardised card spacing, portrait dimensions, names and designations for desktop, tablet and mobile layouts.
+- Public committee section intentionally excludes personal addresses and phone numbers.
