@@ -411,8 +411,15 @@
         </div>
 
         <div class="signature-placeholder">
-          <span>Signature</span>
-          <small>Digital signature/upload will be added when the online workflow is connected.</small>
+          <div class="signature-upload-content">
+            <label for="memberSignature" class="signature-upload-label">Applicant Signature <span class="required">*</span></label>
+            <label for="memberSignature" class="signature-upload-box" id="signatureUploadBox">
+              <span id="signaturePreviewText">Click to upload signature</span>
+              <img id="signaturePreview" alt="Selected signature preview">
+            </label>
+            <input id="memberSignature" name="member_signature" type="file" accept="image/*">
+            <small id="signatureHelp">Upload a clear signature image (JPG, JPEG or PNG; maximum 5 MB).</small>
+          </div>
         </div>
 
         <button class="btn primary" type="submit">Submit Membership Application</button>
@@ -453,7 +460,7 @@
 <section id="notices" class="section notice-board-section"><div class="container">
 <div class="section-tag">NOTICE BOARD</div>
 <div class="notice-board-heading"><div><h2>Notices &amp; Announcements</h2><p class="lead">Official updates can be published here as they are approved by the Association.</p></div></div>
-<div class="notice-board-grid">
+<div class="notice-board-grid" id="noticeBoardList">
   <article class="notice-board-card"><span class="notice-date">Membership</span><h3>Membership enrolment</h3><p>Membership information, categories and applicable fees are available in the membership section.</p><a href="#membership">Go to Membership →</a></article>
   <article class="notice-board-card"><span class="notice-date">Association</span><h3>National Managing Committee</h3><p>Meet the office bearers and members guiding the work of The Association of Science Teachers.</p><a href="#committee">View Committee →</a></article>
   <article class="notice-board-card"><span class="notice-date">Website</span><h3>Association archive</h3><p>Conference history, activities, publications and gallery material are being organised for the website.</p><a href="#conferences">View Conferences →</a></article>

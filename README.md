@@ -81,3 +81,11 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Removed the clarification in brackets after the bank account name.
 - Removed the duplicate address card from the National Network section; visitors are directed to the single Registered Office & Contact section.
 - Updated the footer to show the same Head Office / Registered Office address.
+
+
+## V1.8.10 — PDF Notices and Membership Signature
+- Latest Updates and the Notice Board now render from `data/notices.json`.
+- Add an approved PDF to `assets/notices/` and set its `pdfUrl` in `data/notices.json` to publish a downloadable notice in both places. See `docs/PUBLISHING_NOTICES_WITH_PDF_V1_8_10.md`.
+- Improved contrast of the membership enrolment declaration.
+- Added applicant signature image selection and browser preview (maximum 5 MB).
+- Important: the static form does not yet send/store application data, photo, or signature; a secure backend is required for live collection.

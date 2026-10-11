@@ -3,7 +3,7 @@ menu?.addEventListener('click',()=>{links.style.display=links.style.display==='f
 document.querySelector('#membershipForm')?.addEventListener('submit',e=>{
   e.preventDefault();
   const msg=document.querySelector('#formMsg');
-  if(msg) msg.textContent='Thank you. Your membership application details have been captured by this prototype. Online storage, acknowledgement and payment workflow will be connected in a future version.';
+  if(msg) msg.textContent='This is a website prototype. Your application, photo and signature are not sent or stored online yet. The Association must connect a secure submission backend before accepting applications online.';
 });
 
 /* Hero slideshow: cycles through the association's conference photographs. */
@@ -110,4 +110,58 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
     toggle.textContent=paused?'▶':'Ⅱ';
     toggle.setAttribute('aria-label',paused?'Play notices':'Pause notices');
   });
+})();
+
+
+/* V1.8.10 — Signature image selection and preview (browser-side only) */
+(function(){
+  const input=document.querySelector('#memberSignature');
+  const preview=document.querySelector('#signaturePreview');
+  const text=document.querySelector('#signaturePreviewText');
+  const help=document.querySelector('#signatureHelp');
+  if(!input) return;
+  input.addEventListener('change',function(){
+    const file=this.files&&this.files[0];
+    if(!file) return;
+    if(!file.type.startsWith('image/')){this.value='';if(help)help.textContent='Please choose an image file (JPG, JPEG or PNG).';return;}
+    if(file.size>5*1024*1024){this.value='';if(help)help.textContent='Signature image is larger than 5 MB. Please choose a smaller image.';return;}
+    const reader=new FileReader();
+    reader.onload=e=>{if(preview){preview.src=e.target.result;preview.style.display='block';}if(text)text.style.display='none';if(help)help.textContent=file.name+' selected';};
+    reader.readAsDataURL(file);
+  });
+})();
+
+/* V1.8.10 — Load notices from data/notices.json for both Latest Updates and Notice Board.
+   A notice may include pdfUrl, which becomes its downloadable circular/document link. */
+(async function(){
+  const heroList=document.querySelector('#heroNoticeList');
+  const board=document.querySelector('#noticeBoardList');
+  if(!heroList&&!board) return;
+  let notices=[];
+  try{
+    const response=await fetch('data/notices.json',{cache:'no-store'});
+    if(!response.ok) throw new Error('Notices data unavailable');
+    notices=await response.json();
+    if(!Array.isArray(notices)) throw new Error('Invalid notices data');
+  }catch(err){ return; } // retain the built-in fallback content when local file access blocks fetch
+  const safe=(value)=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const safeHref=(value)=>{const v=String(value||'').trim();return /^(https?:\/\/|#|assets\/)/i.test(v)?v:'#notices';};
+  if(heroList){
+    heroList.innerHTML=notices.map(n=>{
+      const pdf=String(n.pdfUrl||'').trim();
+      const href=pdf?safeHref(pdf):safeHref(n.linkTarget||'#notices');
+      const download=pdf?' target="_blank" rel="noopener"':' ';
+      const cta=pdf?'Download PDF ↓':(n.cta||'Read Update →');
+      return `<a class="notice-item" href="${href}"${download}><span class="notice-date">${safe(n.date||'Update')} · ${safe(n.type||'Notice')}</span><strong>${safe(n.title||'Association update')}</strong><p>${safe(n.summary||'Please open this update for details.')}</p><span class="notice-item-cta">${safe(cta)}</span></a>`;
+    }).join('');
+  }
+  if(board){
+    board.innerHTML=notices.map(n=>{
+      const pdf=String(n.pdfUrl||'').trim();
+      const href=pdf?safeHref(pdf):safeHref(n.linkTarget||'#notices');
+      const label=pdf?'Download PDF ↓':(n.cta||'Read More →');
+      const target=pdf?' target="_blank" rel="noopener"':'';
+      return `<article class="notice-board-card"><span class="notice-date">${safe(n.type||'Notice')} · ${safe(n.date||'Update')}</span><h3>${safe(n.title||'Association update')}</h3><p>${safe(n.summary||'Please open this update for details.')}</p><a href="${href}"${target}>${safe(label)}</a></article>`;
+    }).join('');
+  }
 })();

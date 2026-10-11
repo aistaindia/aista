@@ -354,3 +354,16 @@ section[id]{scroll-margin-top:96px}
 .hero-notices{pointer-events:auto}
 .notice-window,.notice-list{pointer-events:auto}
 .notice-board-card a:hover,.notice-board-card a:focus-visible{text-decoration:underline}
+
+/* V1.8.10 — clearer declaration and applicant signature upload */
+.form-intro-box>p:first-child{color:#173b2e!important;font-size:15px!important;font-weight:700;line-height:1.55}
+.form-intro-box>p:first-child strong{color:#102c22!important}
+.declaration{color:#173b2e!important;opacity:1!important;font-size:14px!important;line-height:1.55!important}
+.signature-placeholder{display:block;color:#203b31;background:#f8fbf9;border-color:#b8cec3}
+.signature-upload-content{display:grid;gap:8px;max-width:100%}
+.signature-upload-label{font-size:13px;font-weight:800;color:#173b2e}
+.signature-upload-box{display:flex;align-items:center;justify-content:center;min-height:76px;max-width:360px;padding:12px;border:1px dashed #8da99a;border-radius:9px;background:#fff;color:#244b3a;font-size:12px;font-weight:700;cursor:pointer;text-align:center}
+.signature-upload-box:hover,.signature-upload-box:focus-within{border-color:var(--red);background:#f6faf7}
+#memberSignature{display:block;max-width:100%;font:inherit;font-size:12px;color:#203b31}
+#signaturePreview{display:none;max-width:100%;max-height:100px;object-fit:contain}
+#signatureHelp{font-size:11px;color:#455e53;line-height:1.45}
