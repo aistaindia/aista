@@ -371,3 +371,25 @@ section[id]{scroll-margin-top:96px}
 /* V1.8.11: make the official registration number prominent in the top bar */
 .registration-banner{font-weight:800;letter-spacing:.02em;color:#fff}
 @media(max-width:850px){.topbar-inner{display:flex;justify-content:center;text-align:center;padding:7px 8px;gap:10px;flex-wrap:wrap;font-size:11px}.registration-banner{font-size:11px}}
+
+
+/* V1.8.12 — tablet-safe hero notices and combined administrative/registration banner */
+.notice-strip .container{max-width:1120px}
+.notice-strip .admin-update-copy{margin:4px 0 8px;line-height:1.65}
+.notice-strip .admin-registration-copy{margin:0;font-size:14px}
+.notice-strip .admin-registration-copy strong{display:inline!important;text-transform:none!important;letter-spacing:normal!important;font-size:14px!important;color:var(--ink)!important;margin:0!important}
+.notice-strip .admin-registration-copy span{font-weight:800;color:var(--green)}
+@media (max-width:1100px){
+  .hero{display:flex;flex-direction:column;align-items:stretch;min-height:0!important;padding-bottom:26px}
+  .hero-content{width:100%;max-width:100%!important;box-sizing:border-box;padding:54px 24px 24px!important}
+  .hero-notices{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;transform:none!important;width:calc(100% - 48px)!important;max-width:720px!important;box-sizing:border-box;align-self:center;margin:0 auto!important}
+  .notice-window{height:165px}
+}
+@media (max-width:600px){
+  .hero-content{padding:42px 20px 22px!important}
+  .hero h1{font-size:clamp(35px,9vw,43px)}
+  .hero-notices{width:calc(100% - 32px)!important}
+  .notice-strip{width:92%;box-sizing:border-box;padding:16px}
+  .notice-strip .admin-registration-copy{font-size:13px}
+  .notice-strip .admin-registration-copy strong{font-size:13px!important}
+}

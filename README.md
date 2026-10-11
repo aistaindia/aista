@@ -89,3 +89,10 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Improved contrast of the membership enrolment declaration.
 - Added applicant signature image selection and browser preview (maximum 5 MB).
 - Important: the static form does not yet send/store application data, photo, or signature; a secure backend is required for live collection.
+
+
+## V1.8.12 — Tablet layout and administrative registration banner
+- Fixed the hero layout at tablet and medium viewport widths: Latest Updates now sits below the hero text rather than overlapping it.
+- Kept the side-by-side hero layout on wider desktop screens and made the tablet/mobile layout responsive.
+- Restored the light-yellow Administrative Update panel and combined the continuity statement with Registration No. S000529/2025-26 in the same panel.
+- Preserved the current official contact, membership, notice, and committee content.
