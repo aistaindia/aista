@@ -93,10 +93,18 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
   const tick=setInterval(()=>{
     if(paused) return;
     offset += step;
-    const max=Math.max(0,list.scrollHeight - 185);
+    const windowEl=list.closest('.notice-window');
+    const max=Math.max(0,list.scrollHeight - (windowEl ? windowEl.clientHeight : 185));
     if(offset>=max){offset=0;}
     list.style.transform=`translateY(${-offset}px)`;
   },60);
+  const noticeWindow=list.closest('.notice-window');
+  // Pause the moving ticker while visitors hover over it or keyboard-focus a notice,
+  // so links remain easy to select and activate.
+  noticeWindow?.addEventListener('mouseenter',()=>{paused=true;});
+  noticeWindow?.addEventListener('mouseleave',()=>{paused=false;});
+  noticeWindow?.addEventListener('focusin',()=>{paused=true;});
+  noticeWindow?.addEventListener('focusout',()=>{paused=false;});
   toggle.addEventListener('click',()=>{
     paused=!paused;
     toggle.textContent=paused?'▶':'Ⅱ';

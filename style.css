@@ -279,7 +279,7 @@ section[id]{scroll-margin-top:96px}
 .notice-toggle{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;border-radius:7px;width:32px;height:30px;cursor:pointer}
 .notice-window{height:190px;overflow:hidden;position:relative;margin-top:10px}
 .notice-list{display:flex;flex-direction:column;gap:12px}
-.notice-item{padding:12px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.06)}
+.notice-item{display:block;padding:12px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.06);color:inherit;text-decoration:none;cursor:pointer;position:relative;z-index:1;transition:background .18s ease,border-color .18s ease,transform .18s ease}.notice-item:hover,.notice-item:focus-visible{background:rgba(255,255,255,.14);border-color:rgba(243,211,122,.75);transform:translateY(-1px);outline:2px solid transparent}.notice-item:focus-visible{outline:2px solid #f3d37a;outline-offset:2px}.notice-item-cta{display:block;margin-top:8px;color:#f3d37a;font-size:10px;font-weight:800}
 .notice-item strong{display:block;font-size:12px;line-height:1.4;margin:5px 0}
 .notice-item p{font-size:10px;line-height:1.45;color:#d8e5df;margin:0}
 .notice-date{font-size:9px;color:#e8bd45;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
@@ -349,3 +349,8 @@ section[id]{scroll-margin-top:96px}
 .registration-meta p,.bank-details p{margin:7px 0;line-height:1.6}
 .bank-details h3{margin:0 0 12px}
 .small-note{font-size:.82rem;color:#777}
+
+/* V1.8.9 — Clickable latest updates and committee notice routing */
+.hero-notices{pointer-events:auto}
+.notice-window,.notice-list{pointer-events:auto}
+.notice-board-card a:hover,.notice-board-card a:focus-visible{text-decoration:underline}
