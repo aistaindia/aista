@@ -2,7 +2,7 @@ const menu=document.querySelector('.menu'); const links=document.querySelector('
 menu?.addEventListener('click',()=>{links.style.display=links.style.display==='flex'?'none':'flex'; if(innerWidth<=850){links.style.position='absolute';links.style.top='68px';links.style.left='0';links.style.right='0';links.style.padding='18px';links.style.background='#fff';links.style.flexDirection='column';links.style.boxShadow='0 15px 30px rgba(0,0,0,.08)'}});
 // V1.8.13 — application-first workflow. Set this to the deployed Google Apps Script Web App URL.
 // Keep blank until the Apps Script backend has been deployed and tested.
-const MEMBERSHIP_SUBMISSION_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const MEMBERSHIP_SUBMISSION_URL = "https://script.google.com/macros/s/AKfycbyoj6UESFVkYB6KKrmwgV8mq8UNMRATEWsu2zF102ZqZkVjt1HsZXiZUsIkHbD9WjQgFg/exec";
 
 async function fileToPayload(file) {
   if (!file) return null;
