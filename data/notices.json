@@ -1,5 +1,16 @@
 [
   {
+    "id": "conference-v-v-giri-university-2026",
+    "date": "12–13 December 2026",
+    "title": "Upcoming Conference at V. V. Giri University",
+    "summary": "The next conference of The Association of Science Teachers will be held on 12 and 13 December 2026 at V. V. Giri University, Daraundha, Siwan, Bihar. Further programme and participation details will be announced by the Association.",
+    "type": "Conference",
+    "official": true,
+    "linkTarget": "#conferences",
+    "pdfUrl": "",
+    "cta": "View Conferences →"
+  },
+  {
     "id": "membership-info",
     "date": "Current",
     "title": "Membership enrolment information",
