@@ -225,3 +225,64 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
     }).join('');
   }
 })();
+
+
+/* V1.8.16 — gallery photo viewer with navigation and direct download */
+(function(){
+  const gallery=document.querySelector('.gallery');
+  const viewer=document.querySelector('#galleryLightbox');
+  if(!gallery || !viewer) return;
+  const photos=[...gallery.querySelectorAll('img')];
+  const largeImage=viewer.querySelector('#galleryLightboxImage');
+  const caption=viewer.querySelector('#galleryLightboxCaption');
+  const download=viewer.querySelector('#galleryLightboxDownload');
+  const close=viewer.querySelector('.gallery-lightbox-close');
+  const previous=viewer.querySelector('.gallery-lightbox-prev');
+  const next=viewer.querySelector('.gallery-lightbox-next');
+  let activeIndex=0;
+  let previousFocus=null;
+  function showPhoto(index){
+    activeIndex=(index+photos.length)%photos.length;
+    const photo=photos[activeIndex];
+    largeImage.src=photo.currentSrc || photo.src;
+    largeImage.alt=photo.alt || 'Association gallery photograph';
+    caption.textContent=photo.alt || `Photo ${activeIndex+1} of ${photos.length}`;
+    download.href=photo.src;
+    const extension=(photo.src.split('.').pop() || 'jpg').split('?')[0];
+    download.download=`AST-Gallery-Photo-${String(activeIndex+1).padStart(2,'0')}.${extension}`;
+  }
+  function openViewer(index){
+    previousFocus=document.activeElement;
+    showPhoto(index);
+    viewer.classList.add('is-open');
+    viewer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    close.focus();
+  }
+  function closeViewer(){
+    viewer.classList.remove('is-open');
+    viewer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    largeImage.removeAttribute('src');
+    previousFocus?.focus();
+  }
+  photos.forEach((photo,index)=>{
+    photo.tabIndex=0;
+    photo.setAttribute('role','button');
+    photo.setAttribute('aria-label',`View larger image: ${photo.alt || `photo ${index+1}`}`);
+    photo.addEventListener('click',()=>openViewer(index));
+    photo.addEventListener('keydown',event=>{
+      if(event.key==='Enter' || event.key===' '){event.preventDefault();openViewer(index);}
+    });
+  });
+  close.addEventListener('click',closeViewer);
+  previous.addEventListener('click',()=>showPhoto(activeIndex-1));
+  next.addEventListener('click',()=>showPhoto(activeIndex+1));
+  viewer.addEventListener('click',event=>{if(event.target===viewer)closeViewer();});
+  document.addEventListener('keydown',event=>{
+    if(!viewer.classList.contains('is-open')) return;
+    if(event.key==='Escape') closeViewer();
+    if(event.key==='ArrowLeft') showPhoto(activeIndex-1);
+    if(event.key==='ArrowRight') showPhoto(activeIndex+1);
+  });
+})();
