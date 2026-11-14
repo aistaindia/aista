@@ -104,3 +104,9 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Added Google Apps Script backend starter at `backend/MembershipAppsScript.gs` for Google Sheets storage and email notification to `tastorg.india@gmail.com`.
 - Follow `docs/MEMBERSHIP_APPLICATION_WORKFLOW_V1_8_13.md` to create the sheet, deploy the endpoint and configure `MEMBERSHIP_SUBMISSION_URL` in `script.js`.
 - The live form does not store/send applications until the one-time backend deployment is completed and the URL is added. Test before announcing applications are open.
+
+
+## V1.8.14 — 54th Conference invitation notice
+- Added the official 54th All India Science Teachers' Conference & National Science Seminar invitation as a one-page downloadable PDF in `assets/notices/`.
+- Added the notice at the top of `data/notices.json`; it appears in both Latest Updates and the Notice Board using the existing PDF notice rendering.
+- No membership, payment, Apps Script, or website design settings were changed.
