@@ -477,3 +477,6 @@ section[id]{scroll-margin-top:96px}
 .gallery-lightbox-download{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);background:var(--gold);color:#17302a;padding:11px 20px;border-radius:999px;font-weight:700}
 .gallery-lightbox-close:hover,.gallery-lightbox-nav:hover{background:rgba(255,255,255,.25)}
 @media(max-width:600px){.gallery-lightbox{padding:64px 48px 82px}.gallery-lightbox-figure{max-width:100%;max-height:75vh}.gallery-lightbox-figure img{max-height:65vh}.gallery-lightbox-prev{left:5px}.gallery-lightbox-next{right:5px}.gallery-lightbox-nav{width:38px;height:38px}.gallery-lightbox-close{right:12px;top:12px}}
+
+/* Chronological conference gallery */
+.gallery-year{margin:30px 0 42px}.gallery-year h3{font-size:22px;color:var(--green,#174b3b);margin:0 0 7px}.gallery-year>p{color:#5d6863;margin:0 0 16px}.gallery-year .gallery{margin-top:12px}
