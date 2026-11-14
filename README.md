@@ -106,7 +106,8 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - The live form does not store/send applications until the one-time backend deployment is completed and the URL is added. Test before announcing applications are open.
 
 
-## V1.8.14 — 54th Conference invitation notice
-- Added the official 54th All India Science Teachers' Conference & National Science Seminar invitation as a one-page downloadable PDF in `assets/notices/`.
-- Added the notice at the top of `data/notices.json`; it appears in both Latest Updates and the Notice Board using the existing PDF notice rendering.
-- No membership, payment, Apps Script, or website design settings were changed.
+## V1.8.14 — 54th Conference Notice and NEW label
+- Added the original two-page scanned invitation as one downloadable PDF at `assets/notices/54th-conference-invitation-dec-2026.pdf`. The original page content, signatures, stamps and handwritten marks are preserved.
+- Added the official conference notice at the top of `data/notices.json`; it appears in both the homepage Latest Updates ticker and the Notice Board.
+- Added a `NEW` label to the conference notice in both places. The label is scheduled to display through 29 November 2026 and then disappear automatically.
+- The notice links directly to the downloadable PDF. No existing membership or website sections were intentionally changed.

@@ -201,22 +201,27 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
   }catch(err){ return; } // retain the built-in fallback content when local file access blocks fetch
   const safe=(value)=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const safeHref=(value)=>{const v=String(value||'').trim();return /^(https?:\/\/|#|assets\/)/i.test(v)?v:'#notices';};
+  const isNew=(n)=>{
+    const until=String(n.newUntil||'').trim();
+    return Boolean(until && /^\\d{4}-\\d{2}-\\d{2}$/.test(until) && until >= new Date().toISOString().slice(0,10));
+  };
+  const newTag=(n)=>isNew(n)?'<span class="notice-new-badge">NEW</span>':'';
   if(heroList){
     heroList.innerHTML=notices.map(n=>{
       const pdf=String(n.pdfUrl||'').trim();
       const href=pdf?safeHref(pdf):safeHref(n.linkTarget||'#notices');
-      const download=pdf?' target="_blank" rel="noopener"':' ';
-      const cta=pdf?'Download PDF ↓':(n.cta||'Read Update →');
-      return `<a class="notice-item" href="${href}"${download}><span class="notice-date">${safe(n.date||'Update')} · ${safe(n.type||'Notice')}</span><strong>${safe(n.title||'Association update')}</strong><p>${safe(n.summary||'Please open this update for details.')}</p><span class="notice-item-cta">${safe(cta)}</span></a>`;
+      const download=pdf?' download':'';
+      const cta=pdf?(n.cta||'Download PDF ↓'):(n.cta||'Read Update →');
+      return `<a class="notice-item" href="${href}"${download}><span class="notice-date">${safe(n.date||'Update')} · ${safe(n.type||'Notice')} ${newTag(n)}</span><strong>${safe(n.title||'Association update')}</strong><p>${safe(n.summary||'Please open this update for details.')}</p><span class="notice-item-cta">${safe(cta)}</span></a>`;
     }).join('');
   }
   if(board){
     board.innerHTML=notices.map(n=>{
       const pdf=String(n.pdfUrl||'').trim();
       const href=pdf?safeHref(pdf):safeHref(n.linkTarget||'#notices');
-      const label=pdf?'Download PDF ↓':(n.cta||'Read More →');
-      const target=pdf?' target="_blank" rel="noopener"':'';
-      return `<article class="notice-board-card"><span class="notice-date">${safe(n.type||'Notice')} · ${safe(n.date||'Update')}</span><h3>${safe(n.title||'Association update')}</h3><p>${safe(n.summary||'Please open this update for details.')}</p><a href="${href}"${target}>${safe(label)}</a></article>`;
+      const label=pdf?(n.cta||'Download PDF ↓'):(n.cta||'Read More →');
+      const download=pdf?' download':'';
+      return `<article class="notice-board-card"><span class="notice-date">${safe(n.type||'Notice')} · ${safe(n.date||'Update')} ${newTag(n)}</span><h3>${safe(n.title||'Association update')}</h3><p>${safe(n.summary||'Please open this update for details.')}</p><a href="${href}"${download}>${safe(label)}</a></article>`;
     }).join('');
   }
 })();
