@@ -111,3 +111,14 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Added the official conference notice at the top of `data/notices.json`; it appears in both the homepage Latest Updates ticker and the Notice Board.
 - Added a `NEW` label to the conference notice in both places. The label is scheduled to display through 29 November 2026 and then disappear automatically.
 - The notice links directly to the downloadable PDF. No existing membership or website sections were intentionally changed.
+
+
+## V1.8.15 — Hero conference invitation download
+- The moving Upcoming Conference strip below the hero is now a direct download link to the original signed invitation PDF.
+- Added a clear `DOWNLOAD INVITATION` cue while keeping the existing conference text, colors and scrolling announcement style.
+- The strip uses the same PDF already linked from the Notice Board and Latest Updates.
+
+## V1.8.19 — Updated 54th Conference Invitation
+- Replaced the 54th Conference invitation PDF with the latest invitation artwork supplied for 12–13 December 2026.
+- Added a matching JPG copy under `assets/notices/`.
+- Existing invitation download links continue to use the same PDF path; no membership/backend settings were changed.
