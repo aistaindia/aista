@@ -25,3 +25,9 @@ The homepage **LATEST UPDATES** ticker and the lower **Notices & Announcements**
 ## Important membership form limitation
 
 The photo and signature controls let applicants select an image and preview it in the browser. This static GitHub Pages prototype does **not** transmit or securely store the application, photo, or signature. Connect a secure form backend before using it to collect real membership applications.
+
+
+## Showing a temporary NEW label (V1.8.14)
+Add a `newUntil` field to a notice using an ISO date (`YYYY-MM-DD`), for example:
+`"newUntil": "2026-11-29"`.
+The `NEW` label appears in both Latest Updates and the Notice Board through that date, then hides automatically. Omit `newUntil` for notices that should not be marked NEW.
