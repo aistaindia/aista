@@ -480,3 +480,17 @@ section[id]{scroll-margin-top:96px}
 
 /* Chronological conference gallery */
 .gallery-year{margin:30px 0 42px}.gallery-year h3{font-size:22px;color:var(--green,#174b3b);margin:0 0 7px}.gallery-year>p{color:#5d6863;margin:0 0 16px}.gallery-year .gallery{margin-top:12px}
+
+
+/* V1.8.21 — membership address field, accessible archive gallery and footer */
+.membership-form-v18 .permanent-address-field{grid-column:1/-1;width:100%}
+.membership-form-v18 .permanent-address-field textarea{width:100%;min-height:145px;line-height:1.55;background:#fff}
+.gallery-year{margin:30px 0 42px}
+.gallery-year>h3{font-size:22px;color:var(--green);margin:0 0 5px}
+.gallery-year>p{color:var(--muted);margin:0 0 16px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:12px;cursor:zoom-in;transition:transform .2s ease,box-shadow .2s ease}
+.gallery img:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.footer-inner>div:last-child p:last-child{font-weight:600;color:#c3d5cc;letter-spacing:.01em}
+@media(max-width:850px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery img{height:260px}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}.gallery img{height:auto;max-height:360px;object-fit:cover}.gallery-year>h3{font-size:19px}}

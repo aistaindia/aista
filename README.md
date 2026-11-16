@@ -122,3 +122,4 @@ The Notices & Announcements panel is explicitly anchored to the far-right side o
 - Replaced the 54th Conference invitation PDF with the latest invitation artwork supplied for 12–13 December 2026.
 - Added a matching JPG copy under `assets/notices/`.
 - Existing invitation download links continue to use the same PDF path; no membership/backend settings were changed.
+\n\n## V1.8.21 update\n- Expanded permanent address field for easier entry on mobile and desktop.\n- Corrected year-wise 2024 and 2019 conference photo assignments; retained 2015 and undated historical archives.\n- Enabled larger photo viewing and direct download for every gallery year.\n- Added 2024 and 2019 conference group photographs to the existing homepage slideshow without removing selected slides.\n- Updated footer copyright wording.\n

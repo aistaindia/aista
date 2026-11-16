@@ -227,12 +227,12 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
 })();
 
 
-/* V1.8.16 — gallery photo viewer with navigation and direct download */
+/* V1.8.21 — gallery viewer across every year, with original-photo download */
 (function(){
-  const gallery=document.querySelector('.gallery');
   const viewer=document.querySelector('#galleryLightbox');
-  if(!gallery || !viewer) return;
-  const photos=[...gallery.querySelectorAll('img')];
+  if(!viewer) return;
+  const photos=[...document.querySelectorAll('.gallery img')];
+  if(!photos.length) return;
   const largeImage=viewer.querySelector('#galleryLightboxImage');
   const caption=viewer.querySelector('#galleryLightboxCaption');
   const download=viewer.querySelector('#galleryLightboxDownload');
