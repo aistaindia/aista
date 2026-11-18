@@ -286,3 +286,35 @@ document.querySelector('#memberPhoto')?.addEventListener('change', function () {
     if(event.key==='ArrowRight') showPhoto(activeIndex+1);
   });
 })();
+
+
+// V1.8.22 — Progressive Web App installation and service-worker registration.
+(() => {
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(error => console.warn('AST app service worker could not be registered:', error)));
+  }
+  let installPrompt = null;
+  const navInner = document.querySelector('.nav-inner');
+  if (!navInner || document.getElementById('astInstallApp')) return;
+  const button = document.createElement('button');
+  button.id = 'astInstallApp'; button.type = 'button'; button.className = 'ast-install-app';
+  button.textContent = 'Install App'; button.setAttribute('aria-label','Install The Association of Science Teachers app');
+  navInner.appendChild(button);
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (isStandalone) { button.hidden = true; return; }
+  window.addEventListener('beforeinstallprompt', event => { event.preventDefault(); installPrompt = event; button.hidden = false; });
+  button.addEventListener('click', async () => {
+    if (installPrompt) {
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null;
+      button.hidden = true;
+      return;
+    }
+    const isAppleMobile = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    alert(isAppleMobile
+      ? 'To install AST: open this website in Safari, tap Share, then choose “Add to Home Screen”.'
+      : 'If your browser offers installation, open its menu and choose “Install app” or “Add to Home screen”.');
+  });
+  window.addEventListener('appinstalled', () => { button.hidden = true; installPrompt = null; });
+})();

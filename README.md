@@ -1,3 +1,28 @@
+# V1.8.22 — Free Progressive Web App (PWA)
+
+This release adds installability while preserving the existing AST website, gallery, membership form and Google Apps Script submission code.
+
+## PWA files added
+- `manifest.webmanifest` — app name, colours, start URL and icons.
+- `service-worker.js` — caches the app shell and selected images; does not intercept POST requests or cross-origin Google Apps Script calls. Includes future push-notification event handlers.
+- `offline.html` — simple offline information page.
+- `assets/pwa/` — app icons generated from the supplied official logo.
+
+## Publish
+Upload the extracted contents of `aista-main` to the existing GitHub Pages repository, keeping the `assets` folder and `CNAME`. GitHub Pages must serve the site over HTTPS.
+
+## Install on phones
+- Android: open `https://www.tast.org.in` in Chrome and use the website's **Install App** control or Chrome's Install option.
+- iPhone/iPad: open the website in Safari → Share → Add to Home Screen.
+
+## Important: push notifications are prepared, not activated
+The service worker includes handlers for incoming push messages and notification taps. Actual push delivery still requires a secure push-subscription backend, VAPID public/private keys, a consent-based subscription UI, and an approved sender/notification workflow. No push subscriptions are created in this release. This avoids exposing private keys or changing the existing membership backend.
+
+## Offline and membership behaviour
+The service worker caches the app shell and selected static images. Membership POST requests, file uploads and Google Apps Script calls remain network-only and are never intercepted or queued offline. Members must be online to submit applications.
+
+---
+
 ## V1.2.1 update
 
 - Replaced the website logo with the latest official logo supplied for **The Association of Science Teachers**.
